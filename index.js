@@ -31,12 +31,14 @@ app.post("/login", (req, res) => {
     res.json({
       status: "error, username not found",
     });
+    return;
   }
   //check if password is valid
   if (req.body.password !== password) {
     res.json({
       status: "error, wrong password",
     });
+    return;
   }
 
   //return kondisi sukses
